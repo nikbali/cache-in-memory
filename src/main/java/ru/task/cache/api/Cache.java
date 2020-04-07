@@ -1,5 +1,7 @@
 package ru.task.cache.api;
 
+import java.util.Set;
+
 /**
  * Общие методы работы с кэшем
  * @param <K> тип ключа
@@ -32,4 +34,9 @@ public interface Cache<K, V> {
      * Получить текущий размер кэша
      */
     int getCurrentSize();
+
+    /**
+     * Множество всех ключей в кэше
+     */
+    Set<K> keySet();
 }

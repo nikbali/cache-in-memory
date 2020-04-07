@@ -4,6 +4,7 @@ import ru.task.cache.api.*;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Простой LRU-кэш, в котором вытеснение самых старых элементов осуществляется с помощью {@link LinkedHashMap}
@@ -41,7 +42,7 @@ public class LRUCache<K, V> implements Cache<K, V>{
 
     @Override
     public V get(K key) {
-        return null;
+        return lruMap.get(key);
     }
 
     @Override
@@ -57,6 +58,11 @@ public class LRUCache<K, V> implements Cache<K, V>{
     @Override
     public int getCurrentSize() {
         return this.lruMap.size();
+    }
+
+    @Override
+    public Set<K> keySet() {
+        return lruMap.keySet();
     }
 
 }

@@ -5,6 +5,7 @@ import ru.task.cache.api.Cache;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
@@ -79,6 +80,11 @@ public class LFUCache<K, V> implements Cache<K, V> {
     @Override
     public int getCurrentSize() {
         return lfuMap.size();
+    }
+
+    @Override
+    public Set<K> keySet() {
+        return lfuMap.keySet();
     }
 
 
